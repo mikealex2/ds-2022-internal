@@ -11,8 +11,6 @@ import java.util.*;
 public class RestApiController{
     @Autowired
     private ApplicationDAO applicationDAO;
-    @Autowired
-    private UserDAO userDAO;
     @GetMapping("/applications")
     public List<Application> getApplications(){
         return applicationDAO.getApplications();
