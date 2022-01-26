@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <title>Αίτηση Αναβολής Στράτευσης</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+ <section class="navigation">
+	<div class="nav-container">
+		<div class="brand">
+			<a href="#">Army Application</a>
+		</div>
+		<nav>
+			<ul class="nav-list">
+				<li>
+					<a style="color: white;">{{user}}</a>
+				</li>
+				<li>
+					<a href="/logout">Sign out</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+    <br><br><br><br>
+    <form class="login-form" action="add" method="POST">
+        {% csrf_token %}
+		<label for="citizenFirstName">Citizen First Name:</label><br>
+		<input id="citizenFirstName" type="text" name="citizenFirstName"><br>
+		<label for="citizenLastName">Citizen Last Name:</label><br>
+		<input id="citizenLastName" type="text" name="citizenLastName"><br>
+		<label for="citizenEmail">Citizen Email:</label><br>
+		<input id="citizenEmail" type="text" name="citizenEmail"><br>
+		<label for="citizenAmka">Citizen Amka:</label><br>
+		<input id="citizenAmka" type="text" name="citizenAmka"><br>
+		<label for="citizenStratNumber">Citizen Stratological Number:</label><br>
+		<input id="citizenStratNumber" type="text" name="citizenStratNumber"><br>
+		<label for="reason">Reason and time of delay:</label><br>
+		<input id="reason" type="text" name="reasonOfDelay"><br><br>
+        <input type="submit" class="btn btn-custom" value="Apply"><br><br>
+        <div class="text-center pt-3 pb-3">
+            <h4>{{message}}</h4>
+        </div>
+      </form>
+ </section>
